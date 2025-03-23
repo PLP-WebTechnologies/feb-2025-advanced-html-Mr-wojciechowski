@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML5 Elements and Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 800px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+        }
+
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin: 10px 0;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: inline;
+            font-weight: normal;
+            margin-left: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Advanced HTML5 Elements and Forms</h1>
+    </header>
+
+    <section>
+        <h2>Ordered List with Roman Numerals</h2>
+        <!-- Ordered list with Roman numerals -->
+        <ol type="I">
+            <li>Introduction to HTML5</li>
+            <li>Semantic HTML Elements</li>
+            <li>HTML5 Forms and Validation</li>
+            <li>Multimedia Elements</li>
+            <li>Responsive Web Design</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>External Image from Pexels</h2>
+        <!-- External image from Pexels.com -->
+        <img src="https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg"
+            alt="Coding on laptop with HTML code visible on screen" title="HTML Coding">
+    </section>
+
+    <section>
+        <h2>Contact Table</h2>
+        <!-- Table with 5 contacts -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Matendechere</td>
+                    <td>Malindi, Mombasa</td>
+                    <td>(254) 723-4567</td>
+                    <td>john.smith@example.com</td>
+                </tr>
+                <tr>
+                    <td>Jane Sifuna</td>
+                    <td>Kakamega</td>
+                    <td>(254) 787-6543</td>
+                    <td>jane.doe@example.com</td>
+                </tr>
+                <tr>
+                    <td>Michael Otieno</td>
+                    <td>Karen</td>
+                    <td>(254) 756-7890</td>
+                    <td>michael.j@example.com</td>
+                </tr>
+                <tr>
+                    <td>Sarah Williams</td>
+                    <td>Kahawa West</td>
+                    <td>(254) 789-0123</td>
+                    <td>sarah.w@example.com</td>
+                </tr>
+                <tr>
+                    <td>Robert Brown</td>
+                    <td>South B</td>
+                    <td>(254) 7321-6540</td>
+                    <td>robert.b@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Registration Form</h2>
+        <!-- Registration form with different input types and validation -->
+        <form id="registrationForm">
+            <!-- Name field (required) -->
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <!-- Email field (required with email validation) -->
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Password field (required with pattern) -->
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"
+                    placeholder="Minimum 8 characters, with letters and numbers"
+                    pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                    title="Password must be at least 8 characters and include both letters and numbers" required>
+            </div>
+
+            <!-- Date field -->
+            <div class="form-group">
+                <label for="birthdate">Date of Birth:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+
+            <!-- Dropdown selection -->
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="">Select your country</option>
+                    <option value="usa">United States</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="australia">Australia</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <!-- Radio buttons -->
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="prefer-not-to-say" name="gender" value="prefer-not-to-say">
+                    <label for="prefer-not-to-say">Prefer not to say</label>
+                </div>
+            </div>
+
+            <!-- Checkboxes -->
+            <div class="form-group">
+                <label>Interests (select all that apply):</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="web-development" name="interests" value="web-development">
+                    <label for="web-development">Web Development</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="mobile-apps" name="interests" value="mobile-apps">
+                    <label for="mobile-apps">Mobile Apps</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="data-science" name="interests" value="data-science">
+                    <label for="data-science">Data Science</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="ui-ux" name="interests" value="ui-ux">
+                    <label for="ui-ux">UI/UX Design</label>
+                </div>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit">Register</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Advanced HTML5 Assignment</p>
+    </footer>
+</body>
+
+</html>
